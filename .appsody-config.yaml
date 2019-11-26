@@ -1,0 +1,2 @@
+project-name: danni-springboot2
+stack: kabanero/java-spring-boot2:0.3
