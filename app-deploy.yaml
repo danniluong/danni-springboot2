@@ -2,52 +2,29 @@ apiVersion: appsody.dev/v1beta1
 kind: AppsodyApplication
 metadata:
   annotations:
-    architecture: x86_64
-    authoritative-source-url: registry.access.redhat.com
-    build-date: 2019-10-29T16:44:53.794580
     commit.image.appsody.dev/author: dannil@dk.ibm.com <danniluong@gmail.com>
     commit.image.appsody.dev/committer: dannil@dk.ibm.com <danniluong@gmail.com>
     commit.image.appsody.dev/contextDir: C:\danni-springboot2
-    commit.image.appsody.dev/date: Tue Nov 26 14:45:52 2019 +0100
-    commit.image.appsody.dev/message: Initial release
-    description: This image contains the Kabanero development stack for the java-spring-boot2
-      collection
-    distribution-scope: public
-    image.opencontainers.org/created: "2019-11-26T14:59:23+01:00"
+    commit.image.appsody.dev/date: Mon Dec 2 11:09:09 2019 +0100
+    commit.image.appsody.dev/message: "20191201"
+    image.opencontainers.org/created: "2019-12-04T21:52:32+01:00"
     image.opencontainers.org/documentation: https://github.com/danniluong/danni-springboot2
-    image.opencontainers.org/revision: 4f19677a8e0f2e027062408fc0579a397188fa14
-    image.opencontainers.org/source: |-
+    image.opencontainers.org/revision: 7ee5781d6ef4f0897c4c6e496631727d4e87cfd6
+    image.opencontainers.org/source: |
       https://github.com/danniluong/danni-springboot2/tree/master
-      ??
     image.opencontainers.org/url: https://github.com/danniluong/danni-springboot2
-    k8s.io/description: The Universal Base Image is designed and engineered to be
-      the base layer for all of your containerized applications, middleware and utilities.
-      This base image is freely redistributable, but Red Hat only supports Red Hat
-      technologies through subscriptions for Red Hat products. This image is maintained
-      by Red Hat and updated regularly.
-    k8s.io/display-name: Red Hat Universal Base Image 8
-    maintainer: Red Hat, Inc.
-    name: kabanero/java-spring-boot2
-    openshift.io/expose-services: ""
-    openshift.io/tags: base rhel8
-    redhat.com/build-host: cpt-1002.osbs.prod.upshift.rdu2.redhat.com
-    redhat.com/component: ubi8-container
-    redhat.com/license_terms: https://www.redhat.com/en/about/red-hat-end-user-license-agreements#UBI
-    release: "277"
-    stack.appsody.dev/configured: kabanero/java-spring-boot2:0.3
-    stack.appsody.dev/created: 2019-11-25T13:18:41+0000
-    stack.appsody.dev/revision: 6f8c13fac90188f9e38184dd2d7cfb064679a890
-    stack.appsody.dev/tag: kabanero/java-spring-boot2:0.3.16
-    summary: Image for Kabanero java-spring-boot2 development
-    url: https://access.redhat.com/containers/#/registry.access.redhat.com/ubi8/images/8.1-277
-    vcs-ref: c42933bcdbf9f1c232e981a5e40de257c3534c8e
-    vcs-type: git
-    vendor: Kabanero
-    version: 0.2.10
+    stack.appsody.dev/authors: Erin Schnabel <schnabel@us.ibm.com>, Ozzy <ozzy@ca.ibm.com>
+    stack.appsody.dev/configured: appsody/java-spring-boot2:0.3
+    stack.appsody.dev/created: "2019-12-03T16:32:12Z"
+    stack.appsody.dev/description: Spring Boot using OpenJ9 and Maven
+    stack.appsody.dev/licenses: Apache-2.0
+    stack.appsody.dev/tag: appsody/java-spring-boot2:0.3.19
+    stack.appsody.dev/title: Spring Boot®
   creationTimestamp: null
   labels:
     image.opencontainers.org/title: danni-springboot2
-    stack.appsody.dev/version: 0.3.16
+    stack.appsody.dev/id: java-spring-boot2
+    stack.appsody.dev/version: 0.3.19
   name: danni-springboot2
   namespace: danske-bank
 spec:
@@ -61,6 +38,11 @@ spec:
       port: 8080
     initialDelaySeconds: 5
     periodSeconds: 2
+  monitoring:
+    endpoints:
+    - path: /actuator/prometheus
+    labels:
+      k8s-app: danni-springboot2
   readinessProbe:
     failureThreshold: 12
     httpGet:
