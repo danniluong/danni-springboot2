@@ -1,0 +1,14 @@
+Unable to retrieve container logs for cri-o://11b53866372dab686e1aa862f8cfe9ad40f64ac7451bc4589eadd46ea6465ec0Unable to retrieve container logs for cri-o://5772ea5507f2303add0d74370b65260ddc65bf47b8edf1290e8560986c98323c{"level":"warn","ts":1575540989.0050707,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"KO_DATA_PATH\" does not exist or is empty"}
+{"level":"error","ts":1575540989.622377,"logger":"fallback-logger","caller":"git/git.go:35","msg":"Error running git [fetch --depth=1 --recurse-submodules=yes origin bdfa54a419a5251380031c4d70fbf421a8fd4c13]: exit status 128\nerror: no such remote ref bdfa54a419a5251380031c4d70fbf421a8fd4c13\n","stacktrace":"github.com/tektoncd/pipeline/pkg/git.run\n\t/go/src/github.com/tektoncd/pipeline/pkg/git/git.go:35\ngithub.com/tektoncd/pipeline/pkg/git.Fetch\n\t/go/src/github.com/tektoncd/pipeline/pkg/git/git.go:88\nmain.main\n\t/go/src/github.com/tektoncd/pipeline/cmd/git-init/main.go:36\nruntime.main\n\t/usr/local/go/src/runtime/proc.go:198"}
+{"level":"error","ts":1575540990.8267577,"logger":"fallback-logger","caller":"git/git.go:35","msg":"Error running git [pull --recurse-submodules=yes origin]: exit status 1\nFrom https://github.com/danniluong/danni-springboot2\n * [new branch]      master     -> origin/master\nYou asked to pull from the remote 'origin', but did not specify\na branch. Because this is not the default configured remote\nfor your current branch, you must specify a branch on the command line.\n","stacktrace":"github.com/tektoncd/pipeline/pkg/git.run\n\t/go/src/github.com/tektoncd/pipeline/pkg/git/git.go:35\ngithub.com/tektoncd/pipeline/pkg/git.Fetch\n\t/go/src/github.com/tektoncd/pipeline/pkg/git/git.go:91\nmain.main\n\t/go/src/github.com/tektoncd/pipeline/cmd/git-init/main.go:36\nruntime.main\n\t/usr/local/go/src/runtime/proc.go:198"}
+{"level":"warn","ts":1575540990.8268895,"logger":"fallback-logger","caller":"git/git.go:92","msg":"Failed to pull origin : exit status 1"}
+{"level":"info","ts":1575540990.841845,"logger":"fallback-logger","caller":"git/git.go:102","msg":"Successfully cloned https://github.com/danniluong/danni-springboot2 @ bdfa54a419a5251380031c4d70fbf421a8fd4c13 in path /workspace/git-source"}
+Checking for app-deploy.yaml
++ echo 'Checking for app-deploy.yaml'
+++ find /workspace/git-source -name app-deploy.yaml -type f
++ APP_DEPLOY_YAML=/workspace/git-source/app-deploy.yaml
++ '[' -z /workspace/git-source/app-deploy.yaml ']'
++ echo 'Replacing image name in app-deploy.yaml docker-registry.default.svc:5000/danske-bank/danni-springboot2:bdfa54a'
+Replacing image name in app-deploy.yaml docker-registry.default.svc:5000/danske-bank/danni-springboot2:bdfa54a
++ sed -i -e 's#applicationImage: .*$#applicationImage: docker-registry.default.svc:5000/danske-bank/danni-springboot2:bdfa54a#g' /workspace/git-source/app-deploy.yaml
+appsodyapplication.appsody.dev/danni-springboot2 created
