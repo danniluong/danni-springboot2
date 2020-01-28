@@ -26,7 +26,7 @@ metadata:
     stack.appsody.dev/id: java-spring-boot2
     stack.appsody.dev/version: 0.3.19
   name: danni-springboot2
-  namespace: danske-bank
+  namespace: danskebank
 spec:
   applicationImage: dev.local/danni-springboot2
   createKnativeService: false
